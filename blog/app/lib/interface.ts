@@ -2,7 +2,7 @@ export interface simpleBlogCard{
     title:string;
     smallDesc:string;
     currentSlug:string;
-    titleImg:any
+    titleImg:any;
 }
 
 export interface fullBlog{

@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+
+export const revalidate=30;
+
 async function getData(){
   const query=`
   *[_type=='blog'] | order(_createdAt asc){
@@ -20,7 +23,7 @@ return data;
 export default async function Home() {
   const data:simpleBlogCard[]=await getData();
   
-  
+  console.log(data);
   return (
    <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
     {data.map((post,idx)=>(
